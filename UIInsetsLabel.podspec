@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = "description"
+  s.description  = "UIInsetsLabel is a UILabel with the edge property, and the edge can be designed in storyboard. Other more, Corner radius is supported"
 
   s.homepage     = "https://github.com/relayon/UIInsetsLabel"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
