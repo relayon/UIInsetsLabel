@@ -13,17 +13,17 @@
 - (instancetype)init
 {
     if (self = [super init]) {
-        [self setDefaults];
+        [self setEdgeInsets:UIEdgeInsetsZero];
     }
     return self;
 }
 
-- (void)setDefaults {
-    _textEdgeInsets = UIEdgeInsetsZero;
-    [self setTop:0.0f];
-    [self setLeft:0.0f];
-    [self setBottom:0.0f];
-    [self setRight:0.0f];
+- (void)setEdgeInsets:(UIEdgeInsets)edgeInsets{
+    _textEdgeInsets = edgeInsets;
+    [self setTop:edgeInsets.top];
+    [self setLeft:edgeInsets.left];
+    [self setBottom:edgeInsets.bottom];
+    [self setRight:edgeInsets.right];
 }
 
 - (void)setTop:(CGFloat)top {
@@ -47,14 +47,37 @@
 }
 
 - (void)setTextEdgeInsets:(UIEdgeInsets)textEdgeInsets {
-    _textEdgeInsets = textEdgeInsets;
+    [self setEdgeInsets:textEdgeInsets];
 }
 
+/**
+ *  重绘Label
+ *
+ *  @param rect Label的Frame
+ */
 - (void)drawTextInRect:(CGRect)rect {
-//    UIEdgeInsets _textInsets = UIEdgeInsetsMake(_top, _left, _bottom, _right);
     return [super drawTextInRect:UIEdgeInsetsInsetRect(rect, _textEdgeInsets)];
 }
 
+/**
+ *  根据这个Size，Label自适应大小
+ *
+ *  @return 返回Label的大小
+ */
+- (CGSize)intrinsicContentSize
+{
+    CGSize contentSize = [super intrinsicContentSize];
+    
+    return CGSizeMake(contentSize.width + _textEdgeInsets.left + _textEdgeInsets.right,
+                      contentSize.height + _textEdgeInsets.top + _textEdgeInsets.bottom);
+}
+
+#pragma mark -- Corner Radius
+/**
+ *  设置label的圆角半径大小
+ *
+ *  @param cornerRadius 圆角半径
+ */
 -(void)setCornerRadius:(CGFloat)cornerRadius{
     _cornerRadius = cornerRadius;
     self.layer.cornerRadius = cornerRadius;
