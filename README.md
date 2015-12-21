@@ -11,3 +11,6 @@ UIInsetsLabel 是一个支持在Storyboard中设置边缘的UILabel。
 1, 添加一个UILabel到Sotryboard
 2，在identity inspectory中设置UILabel的Class为UIInsetsLabel
 ```
+
+## License
+UIInsetsLabel is available under the MIT license. See the LICENSE file for more info.
