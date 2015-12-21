@@ -1,12 +1,25 @@
 # UIInsetsLabel
 UIInsetsLabel is a UILabel with the edge property, and the edge can be designed in storyboard.
-UIInsetsLabel 是一个支持在Storyboard中设置边缘的UILabel。
+UIInsetsLabel 是一个支持在Storyboard中设置边缘的UILabel，另外，还支持圆角设置。
 
-# 效果如下
+## Design & Effects
 <img src="https://raw.github.com/relayon/UIInsetsLabel/master/Assets/design.png"/>
 <img src="https://raw.github.com/relayon/UIInsetsLabel/master/Assets/effect.png"/>
 
-# Usage:
+## Installation
+
+### Cocoapods(Recommended)
+```
+1. Add `pod 'UIInsetsLabel'` to your Podfile.
+2. Run `pod install`
+```
+
+### Manual
+```
+1. Add all files under `UIInsetsLabel` to your project
+```
+
+## Usage:
 ```
 1, 添加一个UILabel到Sotryboard
 2，在identity inspectory中设置UILabel的Class为UIInsetsLabel
