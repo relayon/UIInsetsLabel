@@ -20,10 +20,10 @@
 
 - (void)setEdgeInsets:(UIEdgeInsets)edgeInsets{
     _textEdgeInsets = edgeInsets;
-    [self setTop:edgeInsets.top];
-    [self setLeft:edgeInsets.left];
-    [self setBottom:edgeInsets.bottom];
-    [self setRight:edgeInsets.right];
+    _top    = edgeInsets.top;
+    _left   = edgeInsets.left;
+    _bottom = edgeInsets.bottom;
+    _right  = edgeInsets.right;
 }
 
 - (void)setTop:(CGFloat)top {
@@ -70,6 +70,16 @@
     
     return CGSizeMake(contentSize.width + _textEdgeInsets.left + _textEdgeInsets.right,
                       contentSize.height + _textEdgeInsets.top + _textEdgeInsets.bottom);
+}
+
+- (CGRect)frame {
+    CGRect fm = [super frame];
+    
+    fm.origin.y  = fm.origin.y - _top;
+    fm.origin.x  = fm.origin.x - _left;
+    fm.size = [self intrinsicContentSize];
+    
+    return fm;
 }
 
 #pragma mark -- Corner Radius

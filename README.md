@@ -16,9 +16,9 @@ UIInsetsLabel 是一个支持在Storyboard中设置边缘的UILabel，另外，�
 ## Installation
 
 ### Cocoapods(Recommended)
+
 ```
-1. Add `pod 'UIInsetsLabel'` to your Podfile.
-2. Run `pod install`
+1. pod 'UIInsetsLabel'
 ```
 
 ### Manual
